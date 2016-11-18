@@ -1,9 +1,19 @@
+import django_filters
 from rest_framework.views import APIView
 from rest_framework.response import Response
+from rest_framework import generics
 from .serializers import SenseiSerializer
 from django.shortcuts import get_object_or_404
 from .models import Sensei
 from rest_framework import status
+
+class SenseiSearch(generics.ListCreateAPIView):
+	serializer_class = SenseiSerializer
+
+	def get_queryset(self):
+		print("queryset")
+		name = self.kwargs["alias"]
+		return Sensei.objects.filter(alias=name)
 
 class SenseiListadoView(APIView):
 	'''Devuelve listado de Senseis'''
