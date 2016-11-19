@@ -3,6 +3,7 @@ from rest_framework import generics
 from rest_framework.response import Response
 from .serializers import AlumniSerializer
 from .models import Alumni
+from .permissions import ApiUserPermissions
 
 class AlumniList(generics.ListCreateAPIView):
 	'''Listado de alumni filtrados por name y activos'''
@@ -11,6 +12,7 @@ class AlumniList(generics.ListCreateAPIView):
 	filter_backends = (filters.SearchFilter, filters.DjangoFilterBackend,)
 	filter_fields = ('is_active',)
 	search_fields = ('name','mail',)
+	permission_classes = (ApiUserPermissions,)
 
 class AlumniDetail(generics.RetrieveUpdateDestroyAPIView):
 	
