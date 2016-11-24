@@ -1,9 +1,11 @@
 coreapi==2.0.9
+dj-database-url==0.4.1
 Django==1.9.8
 django-filter==1.0.0
 django-rest-swagger==2.1.0
 djangorestframework==3.5.3
 djangorestframework-jwt==1.8.0
+gunicorn==19.6.0
 itypes==1.1.0
 openapi-codec==1.1.7
 Pillow==3.4.2
