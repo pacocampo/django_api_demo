@@ -14,3 +14,4 @@ PyJWT==1.4.2
 requests==2.12.1
 simplejson==3.10.0
 uritemplate==3.0.0
+whitenoise==3.2.2
