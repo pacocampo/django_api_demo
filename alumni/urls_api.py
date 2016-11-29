@@ -9,7 +9,8 @@ from .views_apiset import AlumniViewSet
 
 urlpatterns = [
 	# url(r'^',include(router.urls) ),
-	url(r'^listado/', AlumniList.as_view())
+	url(r'^listado/', AlumniList.as_view()),
+	url(r'^(?P<pk>[0-9]+)/$', AlumniDetail.as_view()),
 
 ]
 

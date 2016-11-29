@@ -12,7 +12,7 @@ class AlumniList(generics.ListCreateAPIView):
 	filter_backends = (filters.SearchFilter, filters.DjangoFilterBackend,)
 	filter_fields = ('is_active',)
 	search_fields = ('name','mail',)
-	permission_classes = (ApiUserPermissions,)
+	
 
 class AlumniDetail(generics.RetrieveUpdateDestroyAPIView):
 	
